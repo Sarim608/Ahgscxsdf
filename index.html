@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Multimedia Web Page</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth; /* ✅ Smooth scrolling */
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      color: #333;
+      padding: 0;
+    }
+
+    /* Navigation */
+    nav {
+      background: #2c3e50;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h2 {
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #74ebd5;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    /* Page Layout */
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .media-section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+      font-size: 1.4rem;
+    }
+
+    video, audio {
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      background: #f4f4f4;
+    }
+
+    /* ✅ Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background: #2c3e50;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        display: none;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <nav>
+    <h2>MyMedia</h2>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#audio">Audio</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to My Multimedia Page</h1>
+    <p>Enjoy the audio and video demonstrations below!</p>
+  </header>
+
+  <section class="media-section" id="audio">
+    <h2>🎵 Audio Player</h2>
+    <audio controls>
+      <source src="sample-audio.mp3" type="audio/mpeg">
+      <source src="sample-audio.ogg" type="audio/ogg">
+    
+    </audio>
+  </section>
+
+  <section class="media-section" id="video">
+    <h2>🎬 Video Player</h2>
+    <video controls poster="atif_aslam_500x500.webp"></video>
+  
+      <source src="sample-video.mp4" type="video/mp4">
+      <source src="sample-video.webm" type="video/webm">
+
+    </video>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 My Multimedia Web Page </p>
+    <p>Email: sarimahmed@gmail.com</p>
+  </footer>
+</body>
+</html>
